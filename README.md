@@ -5,8 +5,6 @@
 
 Este projeto disponibiliza uma suíte abrangente de testes automatizados para a API do Automation Exercise, empregando tecnologias modernas como PactumJS, Mocha e Joi para assegurar qualidade e confiabilidade.
 
-Doc api : [Automation Exercise](https://automationexercise.com/api_testing).
-
 ---
 
 ## 🔍 Visão Geral do Projeto
