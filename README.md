@@ -76,15 +76,16 @@ A API oficial está documentada em:
 ## Project Structure
 ```
 qa.automationexercise-api.pactumjs
-├── data/
+
 ├── helpers/   
-├── schemas/ 
-│ ├── category/ 
-│ ├── generals/ 
-│ ├── product/ 
 ├── test/ 
 │ ├── contract/ 
 │ ├── functional/
+├── testData/
+├── testSchemas/ 
+│ ├── category/ 
+│ ├── generals/ 
+│ ├── product/ 
 ├── mochawesome-report
 ├── .gitignore 
 ├── package-lock.json 
