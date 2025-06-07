@@ -1,0 +1,39 @@
+name: API Test Automation with Pactum
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-tests:
+    name: Run API Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'  # Versão explícita recomendada
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci  # Mais seguro que npm install
+      
+    - name: Run API tests with Pactum
+      run: npm run test:report
+      env:
+        NODE_ENV: 'ci'
+        CI: 'true'
+        
+    - name: Upload test report
+      if: always()  # Executa mesmo se os testes falharem
+      uses: actions/upload-artifact@v4
+      with:
+        name: api-test-report
+        path: mochawesome-report
+        retention-days: 7
